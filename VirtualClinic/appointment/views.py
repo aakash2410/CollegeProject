@@ -15,8 +15,8 @@ def register(request):
         password = request.POST.get('pass','')
         pdcheck = request.POST.get('pdcheck','false')
         try:
-            user = User.object.get(email=email)
-            return render(request, '')
+            user = User.objects.get(email=email)
+            return render(request, 'login.html', {})
         except User.DoesNotExist:
             user = User.objects.create(
                 email=email, 
@@ -26,25 +26,22 @@ def register(request):
         if pdcheck == 'false':
             try:
                 patient = Patient.objects.get(user_id = user)
-                return render(request, '')
             except Patient.DoesNotExist:
                 patient = Patient.objects.create(
                     user_id = user,
                     mobile_number = contact
                 )
-                return render(request, '')
         else:
             try:
                 doctor = Doctor.objects.get(user_id = user)
-                return render(request, '')
             except Doctor.DoesNotExist:
                 dspec = request.POST.get('spec','')
                 doctor = Doctor.objects.create(
                     user_id = user,
                     mobile_number = contact,
-                    qualifiation = dspec
+                    qualification = dspec
                 )
-                return render(request, '')
+    return render(request, 'Registration.html')
 
 def login(request):
     if request.method == "POST":

@@ -1,0 +1,33 @@
+.navbar
+{
+    padding:1%;
+    background-color: #23395b;
+}
+.nav-link
+{
+    color: white;
+    font-size:large;
+}
+.nav-link{
+    font-weight: bold;
+}
+.nav-link:hover{
+    text-decoration: none;
+    color:orange;
+}
+.nav-link:active{
+    color:black;
+}
+i
+{
+    color: white;
+}
+.container
+{
+    margin:12%;
+    background-color: #23395b;
+    color: white;
+    padding: 7%;
+    text-align:center;
+
+}

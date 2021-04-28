@@ -16,6 +16,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from appointment.views import *
+from . import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -23,6 +24,9 @@ urlpatterns = [
     path('register/', register),
     path('login/', login),
     path('find_doctor/', find_doctor),
-    path('approve/', approve)
+    path('approve/', approve),
+    path('disease/', views.index, name = 'index'),
+    path('predictdis/', views.predictdis, name = 'predictdis'),
+    path('details/',views.details, name = 'details')
 
 ]

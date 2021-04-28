@@ -1,0 +1,261 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Login</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+
+
+    <style>
+        .bd-placeholder-img {
+            font-size: 1.125rem;
+            text-anchor: middle;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            user-select: none;
+        }
+        .logoload{
+            animation-name: logoload;
+            animation-duration: 1s;
+            animation-timing-function: ease-in-out;
+        }
+        .slideup{
+            animation-name: slideup;
+            animation-duration: 500ms;
+            animation-timing-function: linear;
+        }
+        .slideup1{
+            animation-name: slideup1;
+            animation-duration: 1s;
+            animation-timing-function: linear;
+        }
+        .slideup2{
+            animation-name: slideup2;
+            animation-duration: 1500ms;
+            animation-timing-function: linear;
+        }
+        .slideup3{
+            animation-name: slideup3;
+            animation-duration: 2s;
+            animation-timing-function: linear;
+        }
+        .slideup4{
+            animation-name: slideup4;
+            animation-duration: 2500ms;
+            animation-timing-function: linear;
+        }
+
+        @keyframes logoload {
+            0% {opacity: 0; transform: scale(1.5);}
+            90% {opacity: 1; transform: scale(0.7);}
+            100% {opacity: 1; transform: scale(1);}
+        }
+
+        @keyframes slideup1 {
+            0% {opacity: 0; transform: translateY(+200px );}
+            100%{opacity: 1; transform: translateY(0%);}
+        }
+        @keyframes slideup2 {
+            0% {opacity: 0; transform: translateY(+200px );}
+            100%{opacity: 1; transform: translateY(0%);}
+        }
+        @keyframes slideup3 {
+            0% {opacity: 0; transform: translateY(+200px);}
+            100%{opacity: 1; transform: translateY(0%);}
+        }
+        @keyframes slideup4 {
+            0% {opacity: 0; transform: translateY(+200px );}
+            100%{opacity: 1; transform: translateY(0%);}
+        }
+        @keyframes slideup5 {
+            0% {opacity: 0; transform: translateY(+200px );}
+            100%{opacity: 1; transform: translateY(0%);}
+        }
+
+        @media (min-width: 768px) {
+            .bd-placeholder-img-lg {
+                font-size: 3.5rem;
+            }
+        }
+    </style>
+
+
+    <!-- Custom styles for this template -->
+<style>
+  html,
+body {
+  height: 100%;
+  /*background: #05b0ff;*/
+  background-image: url('./doc.jpg')
+
+
+}
+
+body {
+  display: flex;
+  align-items: center;
+  padding-top: 40px;
+  padding-bottom: 40px;
+
+}
+
+.form-signin {
+  width: 100%;
+  max-width: 330px;
+  padding: 15px;
+  margin: auto;
+}
+.form-signin .checkbox {
+  font-weight: 400;
+}
+.form-signin .form-control {
+  position: relative;
+  box-sizing: border-box;
+  height: auto;
+  padding: 10px;
+  font-size: 16px;
+}
+.form-signin .form-control:focus {
+  z-index: 2;
+}
+.form-signin input[type="email"] {
+  margin-bottom: -1px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+.form-signin input[type="password"] {
+  margin-bottom: 10px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+.black_overlay {
+  display: none;
+  position: absolute;
+  top: 0%;
+  left: 0%;
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  z-index: 1001;
+  -moz-opacity: 0.8;
+  opacity: .80;
+  filter: alpha(opacity=80);
+}
+.white_content {
+  display: none;
+  position: absolute;
+  top: 34%;
+  left: 35%;
+  width: 30%;
+  height: 50%;
+  padding: 16px;
+  border: 10px solid steelblue;
+  background-color: white;
+  z-index: 1002;
+  overflow: auto;
+}
+
+</style>
+</head>
+<body class="text-center">
+
+<main class="form-signin">
+    <form action="#" method="POST">
+        {% csrf_token %}
+        <img class="mb-4 logoload" src="./doc.png" alt="" width="72" height="57">
+        <h1 class="h3 mb-3 fw-normal logoload" style="color: firebrick ">Virtual Doctor</h1>
+        <label for="symptoms" class="visually-hidden slideup" style="color: black "><b>Enter Symptoms(No.) space seperated</b></label>
+        <input type="email" name="email" class="form-control slideup1" placeholder="symptoms" required autofocus>
+
+        </div>
+        <div class="slideup3" style="margin-top: 5px">
+            <button class="w-100 btn btn-lg btn-primary"  onclick="viewsyp()" >View Symptoms</button>
+
+        </div>
+        <div class="slideup4" style="margin-top: 5px">
+            <button class="w-100 btn btn-lg btn-primary"  onclick="viewdis()">Predict Disease</button>
+        </div>
+        </div>
+         <p class="mt-5 mb-3 text-muted" style="color: chartreuse">&copy;Virtual Doctor</p>
+    </form>
+</main>
+
+<div id="fade" class="black_overlay"></div>
+
+<div id="light" class="white_content login-form" style="color: black;">
+    <i class="fa fa-window-close-o" aria-hidden="true" style="background-color: white " href="javascript:void(0)"
+       onclick="document.getElementById('light').style.display='none';document.getElementById('fade').style.display='none'"></i>
+    <div >
+     <!-- <form action="#"   method="get"> -->
+        {% csrf_token %}
+        <h2 class="text-center">Remember Symptom No.</h2>
+          <label >State</label>
+          <div id = 'adddis'>
+                <input type = 'text' id = 'des0' list = 'desis'  placeholder="Enter your symptom">     
+            </div>
+            <button onclick="addsym();">Add More Symptoms</button>
+                <datalist id='desis'>
+                     {% for  i in  b %}
+                        <option    class = "teststate" type = 'text'  value ="{{ i }}">{{ i }}</option>
+                     {% endfor %}
+            </datalist>
+            <button onclick="selid();">View Disease</button>
+            <p id = 'disvalue'></p>
+     <!-- </form> -->
+
+        <script>
+            function viewsyp() {
+                document.getElementById('light').style.display = 'block';
+                document.getElementById('fade').style.display = 'block';
+            }
+        </script>
+</div>
+</div>
+<div id="fade1" class="black_overlay"></div>
+
+<div id="light1" class="white_content login-form" style="color: black;">
+    <i class="fa fa-window-close-o" aria-hidden="true" style="background-color: white " href="javascript:void(0)"
+       onclick="document.getElementById('light1').style.display='none';document.getElementById('fade1').style.display='none'"></i>
+    <div >
+        <h2 class="text-center">Your Disease</h2>
+        <h3 class="text-center">{{ b.dis }}</h3>
+
+        <script>
+            function viewdis() {
+                document.getElementById('light1').style.display = 'block';
+                document.getElementById('fade1').style.display = 'block';
+            }
+        </script>
+</div>
+</div>
+<script>
+    var c = 1;
+    function addsym(){
+        document.getElementById('adddis').innerHTML += ' <input type = "text" id = "des' + c + '" list = "desis" placeholder="Enter your symptom">'
+        c++;
+    }
+
+    function selid(){
+        l = []
+        for(var i = 0; i < c; i++){
+            var b = document.getElementById('des'+i).value
+            l.push(b)
+        }
+
+        $.ajax({
+          type: "POST",
+          contentType: "application/json;charset=utf-8",
+          url : '/success1',
+          traditional: "true",
+          data: l,
+          });
+    }
+</script>
+</body>
+</html>

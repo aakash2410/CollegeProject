@@ -1,0 +1,62 @@
+*
+{
+    box-sizing: border-box;
+}
+.navbar
+{
+    padding:1%;
+    background-color: #23395b;
+}
+.nav-link
+{
+    color: white;
+    font-size:large;
+}
+.nav-link{
+    font-weight: bold;
+}
+.nav-link:hover{
+    text-decoration: none;
+    color:orange;
+}
+.nav-link:active{
+    color:black;
+}
+i
+{
+    color: white;
+}
+.badge
+{
+    padding: 2%;
+    margin:1%;
+    font-size: large;
+    margin-right: 4%;
+}
+.form-control-borderless {
+    border: none;
+}
+
+.form-control-borderless:hover, .form-control-borderless:active, .form-control-borderless:focus {
+    border: none;
+    outline: none;
+    box-shadow: none;
+}
+.form-group
+{
+    padding-left: 4%;
+    margin-bottom: 2%;
+}
+.card-horizontal {
+    display: flex;
+    flex: 1 1 auto;
+}
+.card-body
+{
+    background-color: #406e8e;
+    color:white;
+}
+aside
+{
+    float: right;
+}

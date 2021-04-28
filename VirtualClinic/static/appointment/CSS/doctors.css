@@ -1,0 +1,59 @@
+.navbar
+{
+    padding:1%;
+    background-color: #23395b;
+}
+.nav-link
+{
+    color: white;
+    font-size:large;
+}
+.nav-link{
+    font-weight: bold;
+}
+.nav-link:hover{
+    text-decoration: none;
+    color:orange;
+}
+.nav-link:active{
+    color:black;
+}
+i
+{
+    color: white;
+}
+.card{
+    width:20rem;
+    background-color: #406e8e;
+    color:white;
+    font-weight: bold;
+    font-family: serif;
+}
+.spacing
+{
+    margin:0 auto;
+    text-align: center;
+    padding-top:1% ;
+}
+.xyz
+{
+    padding: 1%;
+    font-weight: bold;
+}
+.list-group-flush{
+    color:black;
+    background-color: #406e8e;
+}
+.card-link{
+color:#ff9000;
+}
+.badge{
+    padding:0.5%;
+    font-size:large;
+    margin:2%;
+    text-align: center;
+
+}
+.mardo{
+    margin-left: 35%;
+}

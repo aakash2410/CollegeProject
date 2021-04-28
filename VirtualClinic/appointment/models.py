@@ -25,16 +25,23 @@ class Doctor(models.Model):
         on_delete = models.CASCADE,
         primary_key = True)
 
-    qualifiation = models.CharField(
+    qualification = models.CharField(
         choices=spec,
         null = True, 
         blank=True, 
         max_length=30)
-
+    
+    experience = models.IntegerField(
+        default=1
+    )
+    fees = models.FloatField(
+        default = 1000.0
+    )
+    city = models.CharField(blank = True, default = "Not specified", max_length = 30)
     mobile_number = models.IntegerField(default = 0)
 
     def __str__(self):
-        return "{}".format(self.user_id)
+        return "Dr. {} {}".format(self.user_id.first_name, self.user_id.last_name)
 
 
 class Appointment(models.Model):
