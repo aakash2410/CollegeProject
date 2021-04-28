@@ -2,7 +2,7 @@ import json
 from django.http.response import HttpResponse, HttpResponseBadRequest, JsonResponse
 from django.shortcuts import render
 from .Dis_Test import RFTest
-from appointment.models import Doctor
+from appointment.models import Doctor, Patient, Appointment
 
 # app.config["MAIL_SERVER"] = 'smtp.gmail.com'
 # app.config["MAIL_PORT"] = 465
@@ -13,14 +13,23 @@ from appointment.models import Doctor
 
 d = RFTest()
 dict1 = {}
-def details(request):
+def details(request, doc_user):
     # email2 = 'dhandesagar78@gmailcom'
 
     # print(email2)
     # msg = Message('OTP', sender='username@gmail.com', recipients=[email2])
     # msg.body = str('Appointment Booked')
     # mail.send(msg)
-    return render(request, 'details.html', dict1)
+    doctor = Doctor.objects.get(user_id_id = doc_user)
+    patient = Patient.objects.get(user_id_id = request.user.id)
+    appointment = Appointment.objects.create(
+        doctor_id = doctor,
+        patient_id = patient,
+        #date = request.POST.get('d', ''),
+        #time = request.POST.get('appt',''),
+        prior_reports = request.POST.get('recordfile', ''),
+    )
+    return render(request, 'details.html', {})
 
 def index(request):
     

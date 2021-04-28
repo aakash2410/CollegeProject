@@ -1,0 +1,232 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="CSS/doctors.css">
+    <title>Doctors appointment list</title>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg ">
+        <a class="navbar-brand" href="#"><i class="fa fa-user-md" aria-hidden="true"></i></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+          <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+            <li class="nav-item active">
+              <a class="nav-link" href="home.html">Home <span class="sr-only">(current)</span></a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+      <div class="mardo">
+      <span class="badge badge-pill badge-info" id="pending">246 Pending</span>
+      <span class="badge badge-pill badge-danger" id="rejected">2 Rejected</span>
+      <span class="badge badge-pill badge-success" id="accepted">5 Accepted</span>
+      </div>
+      <div class="container justify-content-center" >
+<div class="card-deck">
+    
+    <div class="card" id="c1" >
+        <div class="card-body">
+          <h5 class="card-title">FULL NAME</h5>
+          <p class="card-text">Brief description of the problem At nonumy et ut labore dolor gubergren eos consetetur aliquyam gubergren. No dolore ipsum est rebum consetetur sit et, eirmod eirmod sed rebum dolore invidunt.</p>
+          <hr>
+          <p>DATE</p>
+          <hr>
+          <p>TIME</p>
+        </div>
+        <div class="card-body" id="maro">
+            <a href="#" class="card-link">Uploaded Records</a><hr>
+            <div class="spacing" id="mujhe">
+              <button class="btn btn-success xyz" onclick="cardopen(this); return false">Accept</button>
+            <button class="btn btn-danger xyz" onclick="cardclose(this); return false">Reject</button>
+            </div>
+          </div>
+    </div>
+    
+    
+        <div class="card" id="c2">
+            <div class="card-body">
+              <h5 class="card-title">FULL NAME</h5>
+              <p class="card-text">Brief description of the problem At nonumy et ut labore dolor gubergren eos consetetur aliquyam gubergren. No dolore ipsum est rebum consetetur sit et, eirmod eirmod sed rebum dolore invidunt.</p>
+              <hr>
+              <p>DATE</p>
+              <hr>
+              <p>TIME</p>
+            </div>
+            <div class="card-body">
+                <a href="#" class="card-link">Uploaded Records</a><hr>
+                <div class="spacing">
+                  <button class="btn btn-success xyz" onclick="cardopen(this); return false">Accept</button>
+                <button class="btn btn-danger xyz" onclick="cardclose(this); return false">Reject</button>
+                </div>
+              </div>
+        </div>
+    
+    
+        <div class="card" id="c3" >
+            <div class="card-body">
+              <h5 class="card-title">FULL NAME</h5>
+              <p class="card-text">Brief description of the problem At nonumy et ut labore dolor gubergren eos consetetur aliquyam gubergren. No dolore ipsum est rebum consetetur sit et, eirmod eirmod sed rebum dolore invidunt.</p>
+              <hr>
+              <p>DATE</p>
+              <hr>
+              <p>TIME</p>
+            </div>
+            <div class="card-body">
+                <a href="#" class="card-link">Uploaded Records</a><hr>
+                <div class="spacing">
+                  <button class="btn btn-success xyz" onclick="cardopen(this); return false">Accept</button>
+                <button class="btn btn-danger xyz" onclick="cardclose(this); return false">Reject</button>
+                </div>
+              </div>
+        </div>
+    
+        <div class="card" id="c4">
+            <div class="card-body">
+              <h5 class="card-title">FULL NAME</h5>
+              <p class="card-text">Brief description of the problem At nonumy et ut labore dolor gubergren eos consetetur aliquyam gubergren. No dolore ipsum est rebum consetetur sit et, eirmod eirmod sed rebum dolore invidunt.</p>
+              <hr>
+              <p>DATE</p>
+              <hr>
+              <p>TIME</p>
+            </div>
+            <div class="card-body">
+                <a href="#" class="card-link">Uploaded Records</a><hr>
+                <div class="spacing">
+                  <button class="btn btn-success xyz" onclick="cardopen(this); return false">Accept</button>
+                <button class="btn btn-danger xyz" onclick="cardclose(this); return false">Reject</button>
+                </div>
+              </div>
+        </div>
+    
+</div>
+<hr>
+<hr>
+<hr>
+<div class="card-deck">
+    
+    <div class="card" id="c5">
+        <div class="card-body">
+          <h5 class="card-title">FULL NAME</h5>
+          <p class="card-text">Brief description of the problem At nonumy et ut labore dolor gubergren eos consetetur aliquyam gubergren. No dolore ipsum est rebum consetetur sit et, eirmod eirmod sed rebum dolore invidunt.</p>
+          <hr>
+          <p>DATE</p>
+          <hr>
+          <p>TIME</p>
+        </div>
+        <div class="card-body">
+            <a href="#" class="card-link">Uploaded Records</a><hr>
+            <div class="spacing">
+              <button class="btn btn-success xyz" onclick="cardopen(this); return false">Accept</button>
+            <button class="btn btn-danger xyz" onclick="cardclose(this); return false">Reject</button>
+            </div>
+          </div>
+    </div>
+    
+    
+    <div class="card" id="c6">
+        <div class="card-body">
+          <h5 class="card-title">FULL NAME</h5>
+          <p class="card-text">Brief description of the problem At nonumy et ut labore dolor gubergren eos consetetur aliquyam gubergren. No dolore ipsum est rebum consetetur sit et, eirmod eirmod sed rebum dolore invidunt.</p>
+          <hr>
+          <p>DATE</p>
+          <hr>
+          <p>TIME</p>
+        </div>
+        <div class="card-body">
+            <a href="#" class="card-link">Uploaded Records</a><hr>
+            <div class="spacing">
+              <button class="btn btn-success xyz" onclick="cardopen(this); return false">Accept</button>
+            <button class="btn btn-danger xyz" onclick="cardclose(this); return false">Reject</button>
+            </div>
+          </div>
+    </div>
+    
+    <div class="card" id="c7" >
+        <div class="card-body">
+          <h5 class="card-title">FULL NAME</h5>
+          <p class="card-text">Brief description of the problem At nonumy et ut labore dolor gubergren eos consetetur aliquyam gubergren. No dolore ipsum est rebum consetetur sit et, eirmod eirmod sed rebum dolore invidunt.</p>
+          <hr>
+          <p>DATE</p>
+          <hr>
+          <p>TIME</p>
+        </div>
+        <div class="card-body">
+            <a href="#" class="card-link">Uploaded Records</a><hr>
+            <div class="spacing">
+              <button class="btn btn-success xyz" onclick="cardopen(this); return false">Accept</button>
+            <button class="btn btn-danger xyz" onclick="cardclose(this); return false">Reject</button>
+            </div>
+          </div>
+    </div>
+    <div class="card" id="c8">
+        <div class="card-body">
+          <h5 class="card-title">FULL NAME</h5>
+          <p class="card-text">Brief description of the problem At nonumy et ut labore dolor gubergren eos consetetur aliquyam gubergren. No dolore ipsum est rebum consetetur sit et, eirmod eirmod sed rebum dolore invidunt.</p>
+          <hr>
+          <p>DATE</p>
+          <hr>
+          <p>TIME</p>
+        </div>
+        <div class="card-body">
+            <a href="#" class="card-link">Uploaded Records</a><hr>
+            <div class="spacing">
+              <button class="btn btn-success xyz" onclick="cardopen(this); return false">Accept</button>
+            <button class="btn btn-danger xyz" onclick="cardclose(this); return false">Reject</button>
+            </div>
+          </div>
+    </div>
+    </div>
+</div>
+<script>
+  var x=8,y=0,z=0;
+  function cardclose(a){
+    console.log("hi");
+    var b=a.parentNode.parentNode.parentNode.id;
+    console.log(b);
+    var l=[1,2,3,4,5,6,7,8,9];
+    for(var i in l)
+    {
+      if(b[1]==i)
+      {
+        x--;
+        z++;
+      document.getElementById('c'+i).style.display='none';
+      updatepoint(a);
+    }
+  }
+}
+function cardopen(a){
+    console.log("hi");
+    var b=a.parentNode.parentNode.parentNode.id;
+    console.log(b);
+    var l=[1,2,3,4,5,6,7,8,9];
+    for(var i in l)
+    {
+      if(b[1]==i)
+      {
+        x--;
+        y++;
+      document.getElementById('c'+i).style.display='none';
+      updatepoint(a);
+    }
+  }
+}
+function updatepoint(a)
+{
+document.getElementById('accepted').innerHTML=y+' Accepted';
+document.getElementById('rejected').innerHTML=z+' Rejected';
+document.getElementById('pending').innerHTML=x+' Pending';
+
+}
+</script>
+</body>
+</html>

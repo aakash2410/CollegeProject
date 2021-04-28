@@ -47,8 +47,8 @@ class Doctor(models.Model):
 class Appointment(models.Model):
     doctor_id = models.ForeignKey(Doctor, on_delete = models.CASCADE)
     patient_id = models.ForeignKey(Patient, on_delete = models.CASCADE)
-    date = models.DateField()
-    time = models.TimeField()
+    date = models.DateField(null = True, blank = True)
+    time = models.TimeField(null = True, blank = True)
     is_approved = models.BooleanField(null = True, blank = True)
     reason = models.TextField(max_length=1024, blank = True, null = True)
     prior_reports = models.ImageField()

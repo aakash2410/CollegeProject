@@ -22,11 +22,12 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('book/', book),
     path('register/', register),
-    path('login/', login),
+    path('patient/login/', login_patient),
+    path('doctor/login/', login_doctor),
     path('find_doctor/', find_doctor),
     path('approve/', approve),
     path('disease/', views.index, name = 'index'),
     path('predictdis/', views.predictdis, name = 'predictdis'),
-    path('details/',views.details, name = 'details')
+    path('details/<int:doc_user>',views.details, name = 'details')
 
 ]

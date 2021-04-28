@@ -53,11 +53,11 @@
     <div class="d-flex align-items-center center">
       <div class="container">
         <h1 align="center">Please Fill In Your Details To Book An Appointment</h1>
-        <form action = '/Auth/booked/'> 
+        <form action = '/booked/'> 
           <div class="styling-date">
             <label for="start">DATE OF VISIT</label>
             <br>
-            <input type="date" id="d" min="2021-03-20" max="2021-03-27">
+            <input type="date" id="d" min="2021-03-20" max="2021-03-27" name='d'>
             <br>
             <br>
             <label for="appt">SELECT A TIME</label>
@@ -73,7 +73,7 @@
           <br>
           <div class="form-group">
             <label for="exampleFormControlFile1">UPLOAD PRIOR MEDICAL RECORDS</label>
-            <input type="file" class="form-control-file" id="exampleFormControlFile1">
+            <input type="file" class="form-control-file" id="exampleFormControlFile1" name = "recordfile">
           </div>
           <div class="bton">
             <button type="submit" class="btn btn-success login">BOOK APPOINTMENT</button>

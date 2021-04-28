@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from .models import *
 from django.contrib.auth.models import User
 from django.contrib.auth.decorators import login_required
@@ -14,15 +14,18 @@ def register(request):
         lastname = request.POST.get('lname','')
         password = request.POST.get('pass','')
         pdcheck = request.POST.get('pdcheck','false')
+        uname = request.POST.get('uname', '')
         try:
             user = User.objects.get(email=email)
-            return render(request, 'login.html', {})
+            print(user)
+            return render(request, 'Registration.html', {})
         except User.DoesNotExist:
             user = User.objects.create(
                 email=email, 
                 first_name = firstname, 
                 last_name = lastname,
-                password = password,)
+                password = password,
+                username =uname)
         if pdcheck == 'false':
             try:
                 patient = Patient.objects.get(user_id = user)
@@ -36,16 +39,35 @@ def register(request):
                 doctor = Doctor.objects.get(user_id = user)
             except Doctor.DoesNotExist:
                 dspec = request.POST.get('spec','')
+                exp = request.POST.get('experience', '')
+                city = request.POST.get('city', '')
                 doctor = Doctor.objects.create(
                     user_id = user,
                     mobile_number = contact,
-                    qualification = dspec
+                    qualification = dspec,
+                    experience = exp,
+                    city = city
                 )
     return render(request, 'Registration.html')
 
-def login(request):
+def login_patient(request):
     if request.method == "POST":
-        pdcheck = request.POST.get('pdcheck', 'false')
+        email = request.POST.get('email','')
+        password = request.POST.get('pass','')
+        try:
+            user = User.objects.get(email = email)
+        except User.DoesNotExist:
+            ValueError('User Not found')
+        if user.exists():
+            user.password == password  
+        try:
+            patient = Patient.objects.get(user_id = user)
+        except Patient.DoesNotExist:
+                ValueError('Not a patient with this username')
+    return render(request,'loginpat.html')
+
+def login_doctor(request):
+    if request.method == "POST":
         email = request.POST.get('email','')
         password = request.POST.get('pass','')
         try:
@@ -55,18 +77,14 @@ def login(request):
         if user.exists():
             user.password == password
         
-        if pdcheck == 'false':
-            try:
-                patient = Patient.objects.get(user_id = user)
-            except Patient.DoesNotExist:
-                ValueError('Not a patient with this username')
-        else:
-            try:
-                doctor = Doctor.objects.get(user_id = user)
-            except Doctor.DoesNotExist:
-                ValueError('Not a doctor with this username')
         
-        return render(request, '')
+        try:
+            doctor = Doctor.objects.get(user_id = user)
+        except Patient.DoesNotExist:
+                ValueError('Not a patient with this username')
+    return render(request,'logindoc.html')
+            
+    
 
 @login_required
 def book(request, doctor_id):
