@@ -19,5 +19,10 @@ from appointment.views import *
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('book/', book),
+    path('register/', register),
+    path('login/', login),
+    path('find_doctor/', find_doctor),
+    path('approve/', approve)
 
 ]
